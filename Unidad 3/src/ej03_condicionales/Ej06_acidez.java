@@ -1,4 +1,4 @@
-package ej03_ccondicionales;
+package ej03_condicionales;
 
 import java.util.Scanner;
 
