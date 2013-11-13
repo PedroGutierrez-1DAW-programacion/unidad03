@@ -13,10 +13,7 @@ public class Ej07_piedraPapelTijera {
 		int IA = (int)(Math.random() * 3);
 
 		System.out.println("Acción [piedra, papel, tijera]:");
-		
-		String accion = teclado.nextLine();
-		
-		switch(accion){
+		switch(teclado.nextLine()){
 			case "piedra": ganador(0, IA); break;
 			case "papel": ganador(1, IA); break;
 			case "tijera": ganador(2, IA); break;
