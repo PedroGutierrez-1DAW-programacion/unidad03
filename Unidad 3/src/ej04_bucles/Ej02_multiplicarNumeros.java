@@ -12,7 +12,7 @@ public class Ej02_multiplicarNumeros {
 		for(i=0; (n = teclado.nextInt())!=0; i++)
 			r *= n;
 		
-		System.out.println( "Resultado: " + r + " [" + i + " números]");
+		System.out.println("Resultado: " + r + " [" + i + " números]");
 		
 		teclado.close();
 
