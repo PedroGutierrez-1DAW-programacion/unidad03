@@ -12,7 +12,8 @@ public class Ej05_sumaIntervalo {
 		do System.out.println("Número inicial y final:");
 		while((n = teclado.nextInt()) >= (m = teclado.nextInt()));
 		
-		for(; n<=m; n++) r += n;
+		//for(; n<=m; n++) r += n;
+		while(n<=m) r += n++;
 		
 		System.out.println("Resultado: " + r);
 		
