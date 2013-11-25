@@ -56,7 +56,7 @@ public class Ej02_pelota {
 		while(true){
 			Thread.sleep(1000 / 60);
 			dirX = enBordeX();
-			double dx = (dirX ? velX : -velX) * (deceleracion + 1.0);
+			double dx = dirX ? velX : -velX;
 			double dy = altoY - (Math.abs(Math.cos(altura++ / 60.0)) * (altoY - inicioY) * (deceleracion *= gravedad));
 			moverPelota(pelota, pelota.getX() + dx, dy);
 		}
