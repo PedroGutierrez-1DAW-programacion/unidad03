@@ -9,8 +9,9 @@ public class Ej01_diana {
 		
 		int separacion = 10;
 		int circulos = 10;
+		int i=0;
 		
-		for(int i=0; i<circulos; i++){
+		while(i++<circulos){
 			int diametro = (circulos - i) * separacion * 2;
 			Ellipse circulo = new Ellipse(
 				separacion * (i + 1), separacion * (i + 1),
