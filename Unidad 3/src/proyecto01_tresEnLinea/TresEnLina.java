@@ -14,7 +14,7 @@ public class TresEnLina {
 	private final static int anchoTablero = 600;
 	private final static int altoTablero = 600;
 	private final static int anchoLinasTablero = 20;
-	private final static int anchoLinasFichas = 10;
+	private final static int anchoLinasFichas = 20;
 	private final static int porporcionFicha = 80; // Proporción relativa al hueco disponible (porcentaje)
 	private final static Color colorFondoTablero = new Color(240, 220, 200);
 	private final static Color colorLineaTablero = new Color(200, 180, 160);
@@ -39,9 +39,8 @@ public class TresEnLina {
 		{{3},{6,2},{4}},{{5},{2,6},{4}},{{7},{0,8},{4}},{{8},{5,7},{
 		4}},{{6},{3,7},{4}},{{2},{5,1},{4}},{{0},{3,1},{4}},{{0},{8}
 		,{4}},{{2},{6},{4}},{{6},{2},{4}},{{8},{0},{4}},{{0},{4},{8}
-		},{{2},{4},{6}},{{6},{4},{2}},{{8},{4},{0}},{{0},{},{}},{{2}
-		,{},{}},{{6},{},{}},{{8},{},{}},{{1},{},{}},{{3},{},{}},{{5}
-		,{},{}},{{7},{},{}}};	
+		},{{2},{4},{6}},{{6},{4},{2}},{{8},{4},{0}},{{0,2,6,8},{},{}
+		},{{1,3,5,7},{},{}}};	
 
 	public static void main(String[] args) {
 		
@@ -102,8 +101,9 @@ public class TresEnLina {
 				if(tablero[imposiblePerder[regla][2][j2]]!=jIA)
 					correcto = false;
 
-			if(correcto && tablero[imposiblePerder[regla][0][0]]==0){
-				nuevaFicha(imposiblePerder[regla][0][0], jugador);
+			int celda = imposiblePerder[regla][0][(int)(imposiblePerder[regla][0].length * Math.random())];
+			if(correcto && tablero[celda]==0){
+				nuevaFicha(celda, jugador);
 				break;
 			}
 		}
@@ -313,10 +313,10 @@ public class TresEnLina {
 	private static Text[] generarTexto(String titulo, Text[] texto, int tamanio, int x, int y, Color[] c) {
 		for(int i=texto.length-1; i>=0; i--){
 			texto[i] = new Text(x, y, titulo);
-			texto[i].grow(tamanio * 1.5, tamanio);
+			texto[i].grow(tamanio * 1.8, tamanio);
 			texto[i].setColor(i==0 ? c[0] : c[1]);
 			texto[i].draw();
-			texto[i].translate(0, (texto[i].getHeight() / -6) + i);
+			texto[i].translate(0, (texto[i].getHeight() / -10) + i);
 		}
 		
 		return texto;
